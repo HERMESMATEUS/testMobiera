@@ -12,6 +12,11 @@ export const authenticationReducer = (state = { loadding: false }, action) => {
                 ...state,
                 user: action.payload.user
             }
+        case types.updateUser:
+            return {
+                ...state,
+                user: action.payload.user
+            }
         case types.logOut:
             return {}
         default:

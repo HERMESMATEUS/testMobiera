@@ -6,7 +6,7 @@ import MainButton from '../components/mainButton'
 import SecondaryButton from '../components/secondaryButton'
 import InputComponent from '../components/inputComponent'
 import { Height } from '../utils/sizes'
-import { _logOut, _signIn } from '../redux/actions/authentications'
+import { _logOut, _updateUser } from '../redux/actions/authentications'
 import { useDispatch, useSelector } from 'react-redux'
 import CameraComponent from '../components/cameraComponent'
 import { updateUser } from '../gateway/endpoints'
@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
     const doUpdate = async () => {
         let response = await updateUser(upProfileData, upProfileData.id)
         if (response) {
-            dispatch(_signIn(upProfileData))
+            dispatch(_updateUser(upProfileData))
             alert("Actualizado correctamente")
         }
         else alert("Error en la actualizacion")

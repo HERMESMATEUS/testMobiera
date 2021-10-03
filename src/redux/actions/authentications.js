@@ -16,6 +16,11 @@ export const _signIn = ({ user, password }) => {
     }
 }
 
+export const _updateUser = (user) => ({
+    type: types.updateUser,
+    payload: { user }
+});
+
 export const _logOut = () => ({
     type: types.logOut,
     payload: {}
